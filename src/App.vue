@@ -1,10 +1,10 @@
 <template>
   <b-header :config="appViewConfig"></b-header>
-  <router-view/>
+  <router-view />
 </template>
 <script>
-import BHeader from "@b/header.vue"
-import { appViewConfig } from "@vp/app.js"
+import BHeader from "@b/header.vue";
+import { appViewConfig } from "@vp/app.js";
 
 export default {
   components: {
@@ -13,9 +13,9 @@ export default {
   setup() {
     return {
       appViewConfig
-    }
+    };
   }
-}
+};
 </script>
 <style>
 @import url("./style.css");

@@ -4,14 +4,24 @@
  */
 export const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
-
+    path: "/",
+    redirect: "/show"
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path: "/show",
+    name: "Show",
+    component: () => import("@v/show/Index.vue"),
+    children: [
+      {
+        path: "",
+        name: "Home",
+        component: () => import("@v/show/Home.vue")
+      },
+      {
+        path: "/about",
+        name: "About",
+        component: () => import("@v/show/About.vue")
+      }
+    ]
   }
-]
+];

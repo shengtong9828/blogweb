@@ -1,5 +1,5 @@
-const hardPlugin = require("hard-source-webpack-plugin")
-const { resolve } = require("path")
+const hardPlugin = require("hard-source-webpack-plugin");
+const { resolve } = require("path");
 
 module.exports = {
   publicPath: "./",
@@ -15,11 +15,11 @@ module.exports = {
         "@a": resolve(__dirname, "src/assets"),
         "@u": resolve(__dirname, "src/use"),
         "@r": resolve(__dirname, "src/router"),
-        "@v": resolve(__dirname, "src/view"),
+        "@v": resolve(__dirname, "src/views"),
         "@p": resolve(__dirname, "src/plugins"),
         "@b": resolve(__dirname, "src/blocks"),
         "@vp": resolve(__dirname, "src/view-provider")
       }
     }
   }
-}
+};
