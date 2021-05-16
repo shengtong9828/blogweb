@@ -17,6 +17,7 @@ module.exports = {
         "@r": resolve(__dirname, "src/router"),
         "@v": resolve(__dirname, "src/view"),
         "@p": resolve(__dirname, "src/plugins"),
+        "@b": resolve(__dirname, "src/blocks"),
         "@vp": resolve(__dirname, "src/view-provider")
       }
     }

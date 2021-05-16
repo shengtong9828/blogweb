@@ -8,8 +8,8 @@
       "@r/*": ["./router/*"],
       "@v/*": ["./view/*"],
       "@p/*": ["./plugins/*"],
-      "@vp/*": ["./provider/*"],
-
+      "@b/*": ["./blocks/*"],
+      "@vp/*": ["./provider/*"]
     }
   }
 }

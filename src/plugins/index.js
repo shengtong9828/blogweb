@@ -1,12 +1,12 @@
 import router from "@/router"
 import store from "@/store"
-import { Button } from "ant-design-vue"
+import { componentsPlugin } from "./components.js"
 
 /**
  * 插件集
  * @type {import("vue").Plugin[]}
  */
-const plugins = [router, store, Button]
+const plugins = [router, store, componentsPlugin]
 
 /**
  * 批量注册函数

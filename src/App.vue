@@ -1,26 +1,22 @@
 <template>
+  <b-header :config="appViewConfig"></b-header>
   <router-view/>
 </template>
+<script>
+import BHeader from "@b/header.vue"
+import { appViewConfig } from "@vp/app.js"
 
+export default {
+  components: {
+    BHeader
+  },
+  setup() {
+    return {
+      appViewConfig
+    }
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import url("./style.css");
 </style>
