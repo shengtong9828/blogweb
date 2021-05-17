@@ -16,7 +16,7 @@
       <a-button
         v-for="btn in menu"
         :type="btn.type"
-        @click="handle"
+        @click="btn.handle"
         :key="btn.text"
         >{{ btn.text }}</a-button
       >

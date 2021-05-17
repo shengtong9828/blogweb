@@ -2,7 +2,7 @@ const hardPlugin = require("hard-source-webpack-plugin");
 const { resolve } = require("path");
 
 module.exports = {
-  publicPath: "./",
+  publicPath: "/",
   configureWebpack: {
     plugins: [
       new hardPlugin({

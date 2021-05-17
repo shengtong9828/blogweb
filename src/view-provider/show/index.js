@@ -5,6 +5,7 @@ import {
   SisternodeOutlined,
   LikeOutlined
 } from "@ant-design/icons-vue";
+import { useRouteNameToPage, useRoutePathToPage } from "@u/router";
 
 export const showIndexViewConfig = {
   avatar: {
@@ -14,26 +15,32 @@ export const showIndexViewConfig = {
   },
   title: "qing淺",
   subTitle: "凡是过去，皆为序章",
+  unwantedBackwhiteList: ["ShowBlog"],
   buttonGroup: [
     {
       text: "日志",
-      icon: <BookOutlined />
+      icon: <BookOutlined />,
+      handle: useRouteNameToPage("ShowBlog")
     },
     {
       text: "读书",
-      icon: <ReadOutlined />
+      icon: <ReadOutlined />,
+      handle: useRouteNameToPage("ShowBook")
     },
     {
       text: "项目",
-      icon: <ScheduleOutlined />
+      icon: <ScheduleOutlined />,
+      handle: useRouteNameToPage("ShowProject")
     },
     {
       text: "归档",
-      icon: <SisternodeOutlined />
+      icon: <SisternodeOutlined />,
+      handle: useRouteNameToPage("ShowFile")
     },
     {
       text: "赞助列表",
-      icon: <LikeOutlined />
+      icon: <LikeOutlined />,
+      handle: useRouteNameToPage("ShowList")
     }
   ]
 };

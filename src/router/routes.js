@@ -14,8 +14,32 @@ export const routes = [
     children: [
       {
         path: "",
-        name: "Home",
-        component: () => import("@v/show/Home.vue")
+        redirect: "/show/blogs"
+      },
+      {
+        path: "blogs",
+        name: "ShowBlog",
+        component: () => import("@v/show/Blog.vue")
+      },
+      {
+        path: "books",
+        name: "ShowBook",
+        component: () => import("@v/show/Book.vue")
+      },
+      {
+        path: "projects",
+        name: "ShowProject",
+        component: () => import("@v/show/Project.vue")
+      },
+      {
+        path: "files",
+        name: "ShowFile",
+        component: () => import("@v/show/File.vue")
+      },
+      {
+        path: "lists",
+        name: "ShowList",
+        component: () => import("@v/show/List.vue")
       },
       {
         path: "/about",
