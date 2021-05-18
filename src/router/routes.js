@@ -4,6 +4,11 @@
  */
 export const routes = [
   {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@v/common/NotFound.vue")
+  },
+  {
     path: "/",
     redirect: "/show"
   },
