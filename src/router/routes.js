@@ -10,7 +10,23 @@ export const routes = [
   },
   {
     path: "/",
-    redirect: "/show"
+    redirect: "/manage"
+  },
+  {
+    path: "/manage",
+    name: "Manage",
+    component: () => import("@v/manage/Index.vue"),
+    children: [
+      {
+        path: "",
+        redirect: "/manage/login"
+      },
+      {
+        path: "login",
+        name: "ManageLogin",
+        component: () => import("@v/manage/Login.vue")
+      }
+    ]
   },
   {
     path: "/show",

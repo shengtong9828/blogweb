@@ -38,6 +38,19 @@
     opacity: 0;
 }
 
+/*
+* 全局过渡阴影
+*/
+.shadow,
+.shadow:hover {
+    transition: all 0.5s ease-in-out;
+}
+
+.shadow:hover {
+    box-shadow: 0 0 10px #b0bec5;
+}
+
+
 .card {
     margin: 20px 0 !important;
 }
