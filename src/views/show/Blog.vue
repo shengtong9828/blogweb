@@ -21,12 +21,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.card-list {
-  padding-bottom: 10px !important;
-}
-.pagination {
-  text-align: center;
-}
-</style>

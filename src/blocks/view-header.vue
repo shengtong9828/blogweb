@@ -17,7 +17,7 @@
 <script>
 import { PageHeader } from "ant-design-vue";
 import { LeftSquareOutlined } from "@ant-design/icons-vue";
-import { useRouteNameToPage } from "@u/router";
+import { useRoutePathToPage } from "@u/router";
 import { useNotOnRoutewhitelistStatus } from "@u/route.js";
 export default {
   components: {
@@ -31,9 +31,14 @@ export default {
     }
   },
   setup(props) {
-    const { avatar = {}, title, subTitle, unwantedBackwhiteList = [] } =
-      props.config || {};
-    const backHomePage = useRouteNameToPage("ShowBlog");
+    const {
+      avatar = {},
+      title,
+      subTitle,
+      unwantedBackwhiteList = [],
+      homePath
+    } = props.config || {};
+    const backHomePage = useRoutePathToPage(homePath);
     const backShowStatus = useNotOnRoutewhitelistStatus(unwantedBackwhiteList);
     return {
       avatar,

@@ -50,4 +50,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.pagination {
+  text-align: center;
+}
+</style>

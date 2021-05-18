@@ -37,3 +37,7 @@
 .fade-leave-to {
     opacity: 0;
 }
+
+.card {
+    margin: 20px 0 !important;
+}

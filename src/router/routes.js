@@ -42,8 +42,8 @@ export const routes = [
         component: () => import("@v/show/List.vue")
       },
       {
-        path: "/about",
-        name: "About",
+        path: "about",
+        name: "ShowAbout",
         component: () => import("@v/show/About.vue")
       }
     ]

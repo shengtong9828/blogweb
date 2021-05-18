@@ -16,6 +16,7 @@ export const showIndexViewConfig = {
   title: "qing淺",
   subTitle: "凡是过去，皆为序章",
   unwantedBackwhiteList: ["ShowBlog"],
+  homePath: "/show/blogs/1",
   buttonGroup: [
     {
       text: "日志",

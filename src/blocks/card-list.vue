@@ -25,9 +25,6 @@ export default {
 
 <style scoped>
 .card-list {
-  padding-bottom: 30px;
-}
-.card {
-  margin: 20px 0;
+  padding-bottom: 10px;
 }
 </style>

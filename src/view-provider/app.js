@@ -1,3 +1,5 @@
+import { useRouteNameToPage, useRoutePathToPage } from "@u/router";
+
 export const appViewConfig = {
   avatar: {
     src: require("@a/img/avatar.png"),
@@ -20,21 +22,21 @@ export const appViewConfig = {
   ],
   menu: [
     {
-      text: "首页"
-      // handle: () => console.log("首页")
+      text: "首页",
+      handle: useRoutePathToPage("/show/blogs/1")
     },
     {
-      text: "归档"
-      // handle: () => console.log("归档")
+      text: "归档",
+      handle: useRouteNameToPage("ShowFile")
     },
     {
-      text: "赞助列表"
-      // handle: () => console.log("赞助列表")
+      text: "赞助列表",
+      handle: useRouteNameToPage("ShowList")
     },
     {
       text: "关于我",
-      type: "primary"
-      // handle: () => console.log("关于我")
+      type: "primary",
+      handle: useRouteNameToPage("ShowAbout")
     }
   ]
 };
