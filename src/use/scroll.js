@@ -10,3 +10,10 @@ export const useWindowScrollStatus = () => {
   useWindowEvent("scroll", judgeScrollStatusHandler);
   return status;
 };
+
+export const useWindowScrollTo = (position, behavior = "smooth") => {
+  window.scrollTo({
+    ...position,
+    behavior
+  });
+};

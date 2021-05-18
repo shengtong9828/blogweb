@@ -6,9 +6,9 @@
       </template>
     </b-view-header>
     <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
+      <keep-alive>
         <component :is="Component" />
-      </transition>
+      </keep-alive>
     </router-view>
   </main>
 </template>
@@ -34,5 +34,6 @@ export default {
 .show {
   width: 50vw;
   margin: 50px auto;
+  padding-bottom: 50px;
 }
 </style>

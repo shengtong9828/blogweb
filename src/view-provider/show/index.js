@@ -20,12 +20,12 @@ export const showIndexViewConfig = {
     {
       text: "日志",
       icon: <BookOutlined />,
-      handle: useRouteNameToPage("ShowBlog")
+      handle: useRoutePathToPage("/show/blogs/1")
     },
     {
       text: "读书",
       icon: <ReadOutlined />,
-      handle: useRouteNameToPage("ShowBook")
+      handle: useRoutePathToPage("/show/books/1")
     },
     {
       text: "项目",
