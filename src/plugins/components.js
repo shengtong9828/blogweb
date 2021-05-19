@@ -6,7 +6,8 @@ import {
   Pagination,
   Timeline,
   Form,
-  Input
+  Input,
+  Radio
 } from "ant-design-vue";
 
 const components = [
@@ -17,7 +18,8 @@ const components = [
   Pagination,
   Timeline,
   Form,
-  Input
+  Input,
+  Radio
 ];
 export const componentsPlugin = app => {
   components.forEach(app.use, app);
