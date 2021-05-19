@@ -25,6 +25,11 @@ export const routes = [
         path: "login",
         name: "ManageLogin",
         component: () => import("@v/manage/Login.vue")
+      },
+      {
+        path: "editor",
+        name: "ManageEditor",
+        component: () => import("@v/manage/Editor.vue")
       }
     ]
   },
