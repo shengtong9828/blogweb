@@ -50,6 +50,13 @@
     box-shadow: 0 0 10px #b0bec5;
 }
 
+/*
+* 全局边距
+*/
+.mx-1 {
+    margin: 0 10px;
+}
+
 
 .card {
     margin: 20px 0 !important;

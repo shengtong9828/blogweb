@@ -30,6 +30,11 @@ export const routes = [
         path: "editor",
         name: "ManageEditor",
         component: () => import("@v/manage/Editor.vue")
+      },
+      {
+        path: "articles/:pageNum",
+        name: "ManageArticle",
+        component: () => import("@v/manage/Article.vue")
       }
     ]
   },
@@ -53,17 +58,17 @@ export const routes = [
         component: () => import("@v/show/Book.vue")
       },
       {
-        path: "projects",
+        path: "project",
         name: "ShowProject",
         component: () => import("@v/show/Project.vue")
       },
       {
-        path: "files",
+        path: "file",
         name: "ShowFile",
         component: () => import("@v/show/File.vue")
       },
       {
-        path: "lists",
+        path: "list",
         name: "ShowList",
         component: () => import("@v/show/List.vue")
       },

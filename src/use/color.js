@@ -4,3 +4,5 @@ export const useRandomColor = () => {
     ${useRandomNum()}, ${useRandomNum()}, ${useRandomNum()}
   )`;
 };
+
+export const useColorMap = map => key => map.get(key);

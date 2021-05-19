@@ -7,7 +7,8 @@ import {
   Timeline,
   Form,
   Input,
-  Radio
+  Radio,
+  Table
 } from "ant-design-vue";
 
 const components = [
@@ -19,7 +20,8 @@ const components = [
   Timeline,
   Form,
   Input,
-  Radio
+  Radio,
+  Table
 ];
 export const componentsPlugin = app => {
   components.forEach(app.use, app);
