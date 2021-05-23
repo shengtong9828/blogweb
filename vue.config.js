@@ -3,6 +3,14 @@ const { resolve } = require("path");
 
 module.exports = {
   publicPath: "/",
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true
+      }
+    }
+  },
   configureWebpack: {
     plugins: [
       new hardPlugin({
