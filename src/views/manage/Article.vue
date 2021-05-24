@@ -1,5 +1,8 @@
 <template>
   <main class="article shadow">
+    <section class="action">
+      <a-button type="primary" @click="toEditorPage">新建</a-button>
+    </section>
     <a-table
       :columns="columns"
       :data-source="data"
@@ -28,7 +31,7 @@
 <script>
 import { articleViewConfig } from "@vp/manage/article.js";
 import { useColorMap } from "@u/color.js";
-import { useRouteParamChange } from "@u/router.js";
+import { useRouteNameToPage, useRouteParamChange } from "@u/router.js";
 import { useLinkedRouteParam } from "@u/route";
 export default {
   components: {},
@@ -43,12 +46,14 @@ export default {
     pagination.current = useLinkedRouteParam("pageNum");
     const pageNumChange = useRouteParamChange("pageNum");
     const handleChange = ({ current }) => pageNumChange(current);
+    const toEditorPage = useRouteNameToPage("ManageEditor");
     return {
       data,
       columns,
       pagination,
       useColor,
-      handleChange
+      handleChange,
+      toEditorPage
     };
   }
 };
@@ -60,5 +65,9 @@ export default {
   padding: 10px;
   border-radius: 8px;
   border: 2px solid #cfd8dc;
+}
+.action {
+  text-align: right;
+  margin-bottom: 10px;
 }
 </style>

@@ -5,7 +5,7 @@
       <a-button type="danger">清空</a-button>
       <a-button type="primary" @click="showModal">发布</a-button>
     </section>
-    <b-modal ref="modal" />
+    <b-modal ref="modal" @submit="submit" />
   </main>
 </template>
 
@@ -13,20 +13,43 @@
 import { useEditor } from "@u/editor.js";
 import BModal from "@b/modal.vue";
 import { ref } from "@vue/reactivity";
+import http, { lazyRequest } from "@u/http.js";
+import { useErrorNotice, useSuccessNotice } from "@u/notice";
 export default {
   components: {
-    BModal
+    BModal,
   },
   setup() {
-    useEditor("editor");
+    const editor = useEditor();
 
     const modal = ref(null);
     const showModal = () => modal.value.setVisible(true);
+
+    const submit = async (val) => {
+      try {
+        modal.value.okButtonProps.loading = true;
+        const request = http.post("/article", {
+          ...val,
+          content: editor.txt.html(),
+        });
+        await lazyRequest(request);
+        useSuccessNotice({ message: "发布成功" });
+      } catch (e) {
+        useErrorNotice({
+          message: "发布失败",
+          description: e.reason || "未知错误",
+        });
+      } finally {
+        modal.value.setVisible(false);
+        modal.value.okButtonProps.loading = false;
+      }
+    };
     return {
       modal,
-      showModal
+      showModal,
+      submit,
     };
-  }
+  },
 };
 </script>
 

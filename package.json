@@ -14,7 +14,7 @@
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
-    "wangeditor": "^4.6.3",
+    "wangeditor": "^4.6.7",
     "xss": "^1.0.9"
   },
   "devDependencies": {
