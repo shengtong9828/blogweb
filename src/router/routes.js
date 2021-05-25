@@ -78,5 +78,10 @@ export const routes = [
         component: () => import("@v/show/About.vue")
       }
     ]
+  },
+  {
+    path: "/details/:id",
+    name: "Details",
+    component: () => import("@v/details/Index.vue")
   }
 ];

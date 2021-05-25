@@ -11,3 +11,6 @@ export const useRouteParamChange = type => value => {
     params: { [type]: value }
   });
 };
+
+export const useRouteNameWithQueryToPage = (name, type) => query =>
+  router.push({ name, query: { [type]: query } });
