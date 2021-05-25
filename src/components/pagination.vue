@@ -34,7 +34,7 @@ export default {
     const current = useLinkedRouteParam("pageNum");
     watchEffect(() => {
       if (props.hasScroll) {
-        useWindowScrollTo({ top: 0 });
+        useWindowScrollTo({ top: 0 }, "auto");
       }
       emit("change", current.value);
     });

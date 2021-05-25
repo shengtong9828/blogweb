@@ -22,6 +22,7 @@ import { CommentOutlined } from "@ant-design/icons-vue";
 import { useLinkedRouteParam } from "@u/route";
 import http from "@u/http.js";
 import { useErrorNotice } from "@u/notice";
+import { useWindowScrollTo } from "@u/scroll";
 export default {
   components: {
     CommentOutlined,
@@ -30,6 +31,7 @@ export default {
   setup() {
     const id = useLinkedRouteParam("id");
     const article = ref({});
+    useWindowScrollTo({ top: 0 }, "auto");
 
     watchEffect(async () => {
       try {
