@@ -23,6 +23,7 @@ import { useLinkedRouteParam } from "@u/route";
 import http from "@u/http.js";
 import { useErrorNotice } from "@u/notice";
 import { useWindowScrollTo } from "@u/scroll";
+import "wangeditor";
 export default {
   components: {
     CommentOutlined,
