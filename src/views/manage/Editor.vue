@@ -51,12 +51,10 @@ export default {
 
     const id = useRouteQuery("id");
     const updateFlag = Boolean(id);
-    console.log(updateFlag);
     if (updateFlag) {
       onMounted(async () => {
         try {
           const { data } = await http.get(`/article/${id}`);
-          console.log(data);
           editor.txt.html(data.content);
           modal.value.formRecord.title = data.title;
           modal.value.formRecord.synopsis = data.synopsis;

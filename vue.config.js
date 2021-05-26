@@ -1,8 +1,10 @@
 const hardPlugin = require("hard-source-webpack-plugin");
 const { resolve } = require("path");
+const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer")
 
 module.exports = {
   publicPath: "/",
+  productionSourceMap: false,
   devServer: {
     proxy: {
       "/api": {
@@ -15,7 +17,8 @@ module.exports = {
     plugins: [
       new hardPlugin({
         cacheDirectory: resolve(__dirname, "cache")
-      })
+      }),
+      new BundleAnalyzerPlugin()
     ],
     resolve: {
       alias: {
@@ -28,6 +31,9 @@ module.exports = {
         "@b": resolve(__dirname, "src/blocks"),
         "@vp": resolve(__dirname, "src/view-provider")
       }
+    },
+    externals: {
+      moment: "moment"
     }
   }
 };
