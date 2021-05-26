@@ -24,17 +24,19 @@ export default {
 
     watchEffect(
       async () => {
-        try {
-          const res = await http.get(
-            `/article?type=blog&limit=${limit.value}&page=${pageNum.value}`
-          );
-          cardRecords.value = res.data.rows;
-          total.value = res.data.count;
-        } catch (e) {
-          useErrorNotice({
-            message: "获取日志失败",
-            description: e.reason || "未知错误"
-          });
+        if (pageNum.value) {
+          try {
+            const res = await http.get(
+              `/article?type=blog&limit=${limit.value}&page=${pageNum.value}`
+            );
+            cardRecords.value = res.data.rows;
+            total.value = res.data.count;
+          } catch (e) {
+            useErrorNotice({
+              message: "获取日志失败",
+              description: e.reason || "未知错误"
+            });
+          }
         }
       },
       {

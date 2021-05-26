@@ -35,14 +35,16 @@ export default {
     useWindowScrollTo({ top: 0 }, "auto");
 
     watchEffect(async () => {
-      try {
-        const res = await http.get(`/article/${id.value}`);
-        article.value = res.data;
-      } catch (e) {
-        useErrorNotice({
-          message: "文章获取失败",
-          description: e.data || e.reason || "未知错误"
-        });
+      if (id.value) {
+        try {
+          const res = await http.get(`/article/${id.value}`);
+          article.value = res.data;
+        } catch (e) {
+          useErrorNotice({
+            message: "文章获取失败",
+            description: e.data || e.reason || "未知错误"
+          });
+        }
       }
     });
     return {

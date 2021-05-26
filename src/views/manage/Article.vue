@@ -68,22 +68,24 @@ export default {
     const [loading, setLoading] = useState(false);
     watchEffect(
       async () => {
-        try {
-          setLoading(true);
-          const request = await http.get(
-            `/article?limit=${pagination.pageSize}&page=${pagination.current}`
-          );
+        if (pagination.current) {
+          try {
+            setLoading(true);
+            const request = http.get(
+              `/article?limit=${pagination.pageSize}&page=${pagination.current}`
+            );
 
-          const [res] = await lazyRequest(request, 500);
-          data.value = res.data.rows;
-          pagination.total = res.data.count;
-        } catch (e) {
-          useErrorNotice({
-            message: "文章列表获取失败",
-            description: e.reason || "未知错误"
-          });
-        } finally {
-          setLoading(false);
+            const [res] = await lazyRequest(request, 500);
+            data.value = res.data.rows;
+            pagination.total = res.data.count;
+          } catch (e) {
+            useErrorNotice({
+              message: "文章列表获取失败",
+              description: e.reason || "未知错误"
+            });
+          } finally {
+            setLoading(false);
+          }
         }
       },
       {
